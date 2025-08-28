@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Info } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   const [email, setEmail] = useState("");
@@ -74,6 +75,16 @@ export default function Index() {
                 >
                   enviar
                 </button>
+              </div>
+
+              {/* Back to registration link */}
+              <div className="text-center pt-4 sm:pt-6">
+                <Link
+                  to="/"
+                  className="font-tektur text-white text-lg sm:text-xl md:text-2xl hover:text-white/80 transition-colors"
+                >
+                  Voltar para criar conta
+                </Link>
               </div>
             </form>
           </div>
