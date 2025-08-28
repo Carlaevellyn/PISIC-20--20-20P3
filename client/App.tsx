@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import RegisterSuccess from "./pages/RegisterSuccess";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import UserProfile from "./pages/UserProfile";
 import SystemModule from "./pages/SystemModule";
 import NotFound from "./pages/NotFound";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/register-success" element={<RegisterSuccess />} />
           <Route path="/forgot-password" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<UserProfile />} />
           <Route path="/recall" element={<SystemModule />} />
           <Route path="/key-manager" element={<SystemModule />} />
           <Route path="/presenca-qr" element={<SystemModule />} />
