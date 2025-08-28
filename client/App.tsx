@@ -12,6 +12,7 @@ import RegisterSuccess from "./pages/RegisterSuccess";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import UserProfile from "./pages/UserProfile";
+import Contacts from "./pages/Contacts";
 import SystemModule from "./pages/SystemModule";
 import NotFound from "./pages/NotFound";
 
@@ -37,7 +38,7 @@ const App = () => (
           <Route path="/monic" element={<SystemModule />} />
           <Route path="/market-ic" element={<SystemModule />} />
           <Route path="/icronograma" element={<SystemModule />} />
-          <Route path="/contacts" element={<SystemModule />} />
+          <Route path="/contacts" element={<Contacts />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
