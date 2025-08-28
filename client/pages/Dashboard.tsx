@@ -12,7 +12,7 @@ export default function Dashboard() {
     { name: "PresençaQR", id: "presenca-qr" },
     { name: "Monic", id: "monic" },
     { name: "MarketIC", id: "market-ic" },
-    { name: "ICronograma", id: "icronograma" }
+    { name: "ICronograma", id: "icronograma" },
   ];
 
   const handleModuleClick = (moduleId: string) => {
@@ -28,11 +28,10 @@ export default function Dashboard() {
     <div className="min-h-screen bg-pisic-bg p-4 lg:p-6 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-pisic-bg via-pisic-bg to-slate-700"></div>
-      
+
       {/* Main glass container */}
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-6 sm:p-8 md:p-12 lg:p-16 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset] min-h-[calc(100vh-2rem)]">
-          
           {/* Header */}
           <div className="flex items-center justify-between mb-8 lg:mb-12">
             {/* PISIC Logo */}
@@ -109,7 +108,7 @@ export default function Dashboard() {
               <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl">
                 © 2025 IC - UFAL |
               </span>
-              <Link 
+              <Link
                 to="/contacts"
                 className="font-tektur text-white text-lg lg:text-xl xl:text-2xl hover:text-white/80 transition-colors"
               >

@@ -16,18 +16,17 @@ export default function UserProfile() {
     isMonitor: false,
     period: "7º Período",
     contact: "joao.silva@ic.ufal.br",
-    accessCount: "47"
+    accessCount: "47",
   };
 
   return (
     <div className="min-h-screen bg-pisic-bg p-4 lg:p-6 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-pisic-bg via-pisic-bg to-slate-700"></div>
-      
+
       {/* Main glass container */}
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-6 sm:p-8 md:p-12 lg:p-16 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset] min-h-[calc(100vh-2rem)]">
-          
           {/* Header */}
           <div className="flex items-center justify-between mb-8 lg:mb-12">
             {/* PISIC Logo */}
@@ -40,7 +39,7 @@ export default function UserProfile() {
 
             {/* Logout Button */}
             <div className="bg-slate-800/55 rounded-full px-4 py-2 lg:px-6 lg:py-3">
-              <button 
+              <button
                 onClick={handleLogout}
                 className="font-tektur text-pisic-text text-lg sm:text-xl lg:text-2xl xl:text-3xl hover:text-white transition-colors"
               >
@@ -51,10 +50,7 @@ export default function UserProfile() {
 
           {/* Home Navigation */}
           <div className="flex items-center mb-6 lg:mb-8">
-            <Link 
-              to="/dashboard"
-              className="flex items-center gap-3 group"
-            >
+            <Link to="/dashboard" className="flex items-center gap-3 group">
               <Home className="w-8 h-8 lg:w-12 lg:h-12 text-white group-hover:text-white/80 transition-colors" />
               <span className="font-tektur text-white text-lg sm:text-xl lg:text-2xl xl:text-3xl group-hover:text-white/80 transition-colors">
                 inicial
@@ -68,7 +64,7 @@ export default function UserProfile() {
             <div className="w-20 h-20 lg:w-24 lg:h-24 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
               <User className="w-10 h-10 lg:w-12 lg:h-12 text-white" />
             </div>
-            
+
             {/* User Type */}
             <h2 className="font-tektur text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-center">
               usuário aluno
@@ -157,7 +153,7 @@ export default function UserProfile() {
               <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl">
                 © 2025 IC - UFAL |
               </span>
-              <Link 
+              <Link
                 to="/contacts"
                 className="font-tektur text-white text-lg lg:text-xl xl:text-2xl hover:text-white/80 transition-colors"
               >

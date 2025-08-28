@@ -6,7 +6,7 @@ export default function SystemModule() {
   const location = useLocation();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
-  
+
   const moduleName = location.pathname.replace("/", "").replace("-", " ");
   const displayName = moduleName.charAt(0).toUpperCase() + moduleName.slice(1);
 
@@ -18,11 +18,10 @@ export default function SystemModule() {
     <div className="min-h-screen bg-pisic-bg p-4 lg:p-6 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-pisic-bg via-pisic-bg to-slate-700"></div>
-      
+
       {/* Main glass container */}
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-6 sm:p-8 md:p-12 lg:p-16 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset] min-h-[calc(100vh-2rem)]">
-          
           {/* Header */}
           <div className="flex items-center justify-between mb-8 lg:mb-12">
             {/* PISIC Logo */}
@@ -36,7 +35,7 @@ export default function SystemModule() {
             {/* User Menu */}
             <div className="flex items-center bg-slate-800/55 rounded-full px-4 py-2 lg:px-6 lg:py-3">
               <User className="w-6 h-6 lg:w-8 lg:h-8 text-pisic-text mr-3" />
-              <Link 
+              <Link
                 to="/profile"
                 className="font-tektur text-pisic-text text-lg sm:text-xl lg:text-2xl xl:text-3xl mr-2 hover:text-white transition-colors"
               >
@@ -45,7 +44,7 @@ export default function SystemModule() {
               <span className="font-tektur text-pisic-text text-lg sm:text-xl lg:text-2xl xl:text-3xl mx-2">
                 /
               </span>
-              <button 
+              <button
                 onClick={handleLogout}
                 className="font-tektur text-pisic-text text-lg sm:text-xl lg:text-2xl xl:text-3xl hover:text-white transition-colors"
               >
@@ -56,10 +55,7 @@ export default function SystemModule() {
 
           {/* Home Navigation */}
           <div className="flex items-center mb-6 lg:mb-8">
-            <Link 
-              to="/dashboard"
-              className="flex items-center gap-3 group"
-            >
+            <Link to="/dashboard" className="flex items-center gap-3 group">
               <Home className="w-8 h-8 lg:w-12 lg:h-12 text-white group-hover:text-white/80 transition-colors" />
               <span className="font-tektur text-white text-lg sm:text-xl lg:text-2xl xl:text-3xl group-hover:text-white/80 transition-colors">
                 inicial
@@ -103,9 +99,10 @@ export default function SystemModule() {
             <h3 className="font-tektur text-white text-xl sm:text-2xl lg:text-3xl xl:text-4xl mb-6 leading-relaxed">
               Este módulo está em desenvolvimento
             </h3>
-            
+
             <p className="font-tektur text-white/80 text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-relaxed max-w-2xl mx-auto">
-              Continue conversando comigo para implementar as funcionalidades deste sistema.
+              Continue conversando comigo para implementar as funcionalidades
+              deste sistema.
             </p>
           </div>
 
@@ -116,7 +113,7 @@ export default function SystemModule() {
               <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl">
                 © 2025 IC - UFAL |
               </span>
-              <Link 
+              <Link
                 to="/contacts"
                 className="font-tektur text-white text-lg lg:text-xl xl:text-2xl hover:text-white/80 transition-colors"
               >

@@ -15,7 +15,7 @@ export default function Index() {
     <div className="min-h-screen bg-pisic-bg flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background with subtle texture */}
       <div className="absolute inset-0 bg-gradient-to-br from-pisic-bg via-pisic-bg to-slate-700"></div>
-      
+
       <div className="relative z-10 w-full max-w-4xl mx-auto">
         {/* PISIC Logo */}
         <div className="text-center mb-16 sm:mb-20">
@@ -29,7 +29,6 @@ export default function Index() {
         <div className="relative mx-auto max-w-2xl">
           {/* Glass card with backdrop blur */}
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
-            
             {/* Info Icon */}
             <div className="flex justify-center mb-8">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -44,7 +43,8 @@ export default function Index() {
 
             {/* Description text */}
             <p className="font-tektur text-white text-base sm:text-lg md:text-xl lg:text-2xl text-center mb-8 sm:mb-12 leading-relaxed px-4">
-              Por favor, digite seu email instutucional. Você irá receber um link para criar uma nova senha via email.
+              Por favor, digite seu email instutucional. Você irá receber um
+              link para criar uma nova senha via email.
             </p>
 
             {/* Email form */}

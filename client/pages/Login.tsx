@@ -29,11 +29,10 @@ export default function Login() {
       {/* Right side - Login form */}
       <div className="flex-1 flex items-center justify-center p-4 lg:p-8 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-pisic-bg via-pisic-bg to-slate-700"></div>
-        
+
         {/* Glass morphism card */}
         <div className="relative z-10 w-full max-w-2xl">
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
-            
             {/* Main heading */}
             <h1 className="font-tektur text-pisic-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-center mb-8 sm:mb-12 md:mb-16">
               Login
@@ -41,7 +40,6 @@ export default function Login() {
 
             {/* Login form */}
             <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-              
               {/* Email input */}
               <div className="relative">
                 <label className="block font-tektur text-white text-lg sm:text-xl md:text-2xl mb-2">
@@ -90,13 +88,13 @@ export default function Login() {
 
               {/* Navigation links */}
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 pt-4 sm:pt-6">
-                <Link 
+                <Link
                   to="/register"
                   className="font-tektur text-white text-lg sm:text-xl md:text-2xl hover:text-white/80 transition-colors"
                 >
                   NÃO TEM UMA CONTA?
                 </Link>
-                <Link 
+                <Link
                   to="/forgot-password"
                   className="font-tektur text-white text-lg sm:text-xl md:text-2xl hover:text-white/80 transition-colors"
                 >

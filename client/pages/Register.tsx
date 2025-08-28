@@ -9,12 +9,7 @@ export default function Register() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
-  const userTypes = [
-    "Administrador",
-    "Professor",
-    "Aluno",
-    "Coordenador"
-  ];
+  const userTypes = ["Administrador", "Professor", "Aluno", "Coordenador"];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,11 +23,10 @@ export default function Register() {
       {/* Left side - Registration form */}
       <div className="flex-1 flex items-center justify-center p-4 lg:p-8 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-pisic-bg via-pisic-bg to-slate-700"></div>
-        
+
         {/* Glass morphism card */}
         <div className="relative z-10 w-full max-w-2xl">
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
-            
             {/* Main heading */}
             <h1 className="font-tektur text-pisic-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-8 sm:mb-12 md:mb-16">
               crie uma conta
@@ -40,7 +34,6 @@ export default function Register() {
 
             {/* Registration form */}
             <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-              
               {/* User type dropdown */}
               <div className="relative">
                 <label className="block font-tektur text-white text-lg sm:text-xl md:text-2xl mb-2">
@@ -55,9 +48,11 @@ export default function Register() {
                     <span className={userType || "text-white/70"}>
                       {userType || "Selecione..."}
                     </span>
-                    <ChevronDown className={`w-6 h-6 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`w-6 h-6 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
+                    />
                   </button>
-                  
+
                   {isDropdownOpen && (
                     <div className="absolute top-full left-0 right-0 mt-2 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg z-20">
                       {userTypes.map((type) => (

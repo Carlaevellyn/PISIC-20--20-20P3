@@ -14,15 +14,15 @@ export default {
     },
     extend: {
       fontFamily: {
-        'philosopher': ['Philosopher', 'serif'],
-        'rubik-puddles': ['Rubik Puddles', 'cursive'],
-        'tektur': ['Tektur', 'monospace'],
+        philosopher: ["Philosopher", "serif"],
+        "rubik-puddles": ["Rubik Puddles", "cursive"],
+        tektur: ["Tektur", "monospace"],
       },
       colors: {
-        'pisic': {
-          'bg': '#384D5D',
-          'card': '#29475E',
-          'text': '#AFAFAF',
+        pisic: {
+          bg: "#384D5D",
+          card: "#29475E",
+          text: "#AFAFAF",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
