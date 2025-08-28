@@ -17,6 +17,7 @@ import SystemModule from "./pages/SystemModule";
 import RecallLoading from "./pages/RecallLoading";
 import KeyManagerLoading from "./pages/KeyManagerLoading";
 import MarketICLoading from "./pages/MarketICLoading";
+import PresencaQRLoading from "./pages/PresencaQRLoading";
 import AccessDenied from "./pages/AccessDenied";
 import NotFound from "./pages/NotFound";
 
@@ -38,7 +39,7 @@ const App = () => (
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/recall" element={<RecallLoading />} />
           <Route path="/key-manager" element={<KeyManagerLoading />} />
-          <Route path="/presenca-qr" element={<SystemModule />} />
+          <Route path="/presenca-qr" element={<PresencaQRLoading />} />
           <Route path="/monic" element={<AccessDenied />} />
           <Route path="/market-ic" element={<MarketICLoading />} />
           <Route path="/icronograma" element={<SystemModule />} />
