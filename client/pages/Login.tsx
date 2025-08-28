@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { Mail, Lock } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Login data:", { email, password });
+    // Navigate to dashboard after successful login
+    navigate("/dashboard");
   };
 
   return (
