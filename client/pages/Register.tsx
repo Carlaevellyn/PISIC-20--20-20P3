@@ -123,8 +123,8 @@ export default function Register() {
 
               {/* Already have account link */}
               <div className="text-center pt-4 sm:pt-6">
-                <Link 
-                  to="/forgot-password"
+                <Link
+                  to="/login"
                   className="font-tektur text-white text-lg sm:text-xl md:text-2xl hover:text-white/80 transition-colors"
                 >
                   JÁ TEM UMA CONTA?

@@ -77,13 +77,13 @@ export default function Index() {
                 </button>
               </div>
 
-              {/* Back to registration link */}
+              {/* Back to login link */}
               <div className="text-center pt-4 sm:pt-6">
                 <Link
-                  to="/"
+                  to="/login"
                   className="font-tektur text-white text-lg sm:text-xl md:text-2xl hover:text-white/80 transition-colors"
                 >
-                  Voltar para criar conta
+                  Voltar para login
                 </Link>
               </div>
             </form>
