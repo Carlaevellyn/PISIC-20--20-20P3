@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import RegisterSuccess from "./pages/RegisterSuccess";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import SystemModule from "./pages/SystemModule";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,13 @@ const App = () => (
           <Route path="/register-success" element={<RegisterSuccess />} />
           <Route path="/forgot-password" element={<Index />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/recall" element={<SystemModule />} />
+          <Route path="/key-manager" element={<SystemModule />} />
+          <Route path="/presenca-qr" element={<SystemModule />} />
+          <Route path="/monic" element={<SystemModule />} />
+          <Route path="/market-ic" element={<SystemModule />} />
+          <Route path="/icronograma" element={<SystemModule />} />
+          <Route path="/contacts" element={<SystemModule />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
