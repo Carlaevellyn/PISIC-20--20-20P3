@@ -15,6 +15,7 @@ import UserProfile from "./pages/UserProfile";
 import Contacts from "./pages/Contacts";
 import SystemModule from "./pages/SystemModule";
 import RecallLoading from "./pages/RecallLoading";
+import KeyManagerLoading from "./pages/KeyManagerLoading";
 import AccessDenied from "./pages/AccessDenied";
 import NotFound from "./pages/NotFound";
 
@@ -35,7 +36,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/recall" element={<RecallLoading />} />
-          <Route path="/key-manager" element={<SystemModule />} />
+          <Route path="/key-manager" element={<KeyManagerLoading />} />
           <Route path="/presenca-qr" element={<SystemModule />} />
           <Route path="/monic" element={<AccessDenied />} />
           <Route path="/market-ic" element={<SystemModule />} />
