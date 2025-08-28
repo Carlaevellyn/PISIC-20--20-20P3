@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Search, User, LogOut } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const systemModules = [
     { name: "Recall", id: "recall" },
@@ -15,13 +16,12 @@ export default function Dashboard() {
   ];
 
   const handleModuleClick = (moduleId: string) => {
-    console.log(`Navigating to module: ${moduleId}`);
-    // Add navigation logic here
+    navigate(`/${moduleId}`);
   };
 
   const handleLogout = () => {
     console.log("Logging out...");
-    // Add logout logic here
+    navigate("/login");
   };
 
   return (
