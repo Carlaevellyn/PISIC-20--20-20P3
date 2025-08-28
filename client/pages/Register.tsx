@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Mail, Lock, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const userTypes = [
     "Administrador",
@@ -18,6 +19,8 @@ export default function Register() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Registration data:", { email, password, userType });
+    // Navigate to success page after registration
+    navigate("/register-success");
   };
 
   return (
