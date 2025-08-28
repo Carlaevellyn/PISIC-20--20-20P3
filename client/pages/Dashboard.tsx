@@ -46,13 +46,16 @@ export default function Dashboard() {
             {/* User Menu */}
             <div className="flex items-center bg-slate-800/55 rounded-full px-4 py-2 lg:px-6 lg:py-3">
               <User className="w-6 h-6 lg:w-8 lg:h-8 text-pisic-text mr-3" />
-              <span className="font-tektur text-pisic-text text-lg sm:text-xl lg:text-2xl xl:text-3xl mr-2">
+              <Link
+                to="/profile"
+                className="font-tektur text-pisic-text text-lg sm:text-xl lg:text-2xl xl:text-3xl mr-2 hover:text-white transition-colors"
+              >
                 usuário
-              </span>
+              </Link>
               <span className="font-tektur text-pisic-text text-lg sm:text-xl lg:text-2xl xl:text-3xl mx-2">
                 /
               </span>
-              <button 
+              <button
                 onClick={handleLogout}
                 className="font-tektur text-pisic-text text-lg sm:text-xl lg:text-2xl xl:text-3xl hover:text-white transition-colors"
               >
