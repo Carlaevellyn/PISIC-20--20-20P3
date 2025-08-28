@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Register from "./pages/Register";
 import RegisterSuccess from "./pages/RegisterSuccess";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/register" element={<Register />} />
           <Route path="/register-success" element={<RegisterSuccess />} />
           <Route path="/forgot-password" element={<Index />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
