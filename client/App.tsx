@@ -14,6 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import UserProfile from "./pages/UserProfile";
 import Contacts from "./pages/Contacts";
 import SystemModule from "./pages/SystemModule";
+import AccessDenied from "./pages/AccessDenied";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,7 +36,7 @@ const App = () => (
           <Route path="/recall" element={<SystemModule />} />
           <Route path="/key-manager" element={<SystemModule />} />
           <Route path="/presenca-qr" element={<SystemModule />} />
-          <Route path="/monic" element={<SystemModule />} />
+          <Route path="/monic" element={<AccessDenied />} />
           <Route path="/market-ic" element={<SystemModule />} />
           <Route path="/icronograma" element={<SystemModule />} />
           <Route path="/contacts" element={<Contacts />} />
