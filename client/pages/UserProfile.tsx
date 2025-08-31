@@ -1,15 +1,23 @@
 import { Home, User } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function UserProfile() {
   const navigate = useNavigate();
+  const [userType, setUserType] = useState<string>("");
+
+  useEffect(() => {
+    // Get user type from localStorage (set during registration)
+    const storedUserType = localStorage.getItem("userType");
+    setUserType(storedUserType || "Aluno"); // Default to Aluno if not set
+  }, []);
 
   const handleLogout = () => {
     navigate("/login");
   };
 
-  // Mock user data - in a real app this would come from authentication/API
-  const userData = {
+  // Mock student data
+  const studentData = {
     fullName: "João Silva Santos",
     registration: "20230001234",
     course: "Ciência da Computação",
@@ -18,6 +26,21 @@ export default function UserProfile() {
     contact: "joao.silva@ic.ufal.br",
     accessCount: "47",
   };
+
+  // Mock professor data
+  const professorData = {
+    fullName: "Dr. Maria Silva Santos",
+    academicTitle: "Doutora em Ciência da Computação",
+    department: "Instituto de Computação - UFAL",
+    disciplines: "Algoritmos, Estruturas de Dados, Programação",
+    projects: "IA Aplicada à Educação, Sistemas Distribuídos",
+    education: "PhD em Ciência da Computação - UFPE",
+    course: "Bacharelado em Ciência da Computação",
+    contact: "maria.silva@ic.ufal.br",
+    accessCount: "128",
+  };
+
+  const isProfessor = userType === "Professor";
 
   return (
     <div className="min-h-screen bg-pisic-bg p-4 lg:p-6 relative overflow-hidden">
@@ -67,7 +90,7 @@ export default function UserProfile() {
 
             {/* User Type */}
             <h2 className="font-tektur text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-center">
-              usuário aluno
+              {isProfessor ? "usuário profissional" : "usuário aluno"}
             </h2>
 
             {/* Photo Placeholder */}
@@ -81,68 +104,149 @@ export default function UserProfile() {
           {/* User Information Card */}
           <div className="bg-pisic-bg/65 rounded-[80px] p-8 lg:p-12 xl:p-16 mb-8 lg:mb-12">
             <div className="space-y-4 lg:space-y-6 max-w-4xl">
+              {/* Common field: Full Name */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                 <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
                   NOME COMPLETO:
                 </span>
                 <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
-                  {userData.fullName}
+                  {isProfessor ? professorData.fullName : studentData.fullName}
                 </span>
               </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
-                  MATRÍCULA:
-                </span>
-                <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
-                  {userData.registration}
-                </span>
-              </div>
+              {isProfessor ? (
+                <>
+                  {/* Professor-specific fields */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      TITULO ACADEMICO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {professorData.academicTitle}
+                    </span>
+                  </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
-                  CURSO:
-                </span>
-                <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
-                  {userData.course}
-                </span>
-              </div>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      DEPARTAMENTO/INSTITUTO DE ATUAÇÃO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {professorData.department}
+                    </span>
+                  </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
-                  MONITOR:
-                </span>
-                <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
-                  {userData.isMonitor ? "SIM" : "NÃO"}
-                </span>
-              </div>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      DICIPLINAS:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {professorData.disciplines}
+                    </span>
+                  </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
-                  PERIODO:
-                </span>
-                <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
-                  {userData.period}
-                </span>
-              </div>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      PROJETOS:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {professorData.projects}
+                    </span>
+                  </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
-                  CONTATO:
-                </span>
-                <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
-                  {userData.contact}
-                </span>
-              </div>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      FORMAÇÃO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {professorData.education}
+                    </span>
+                  </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                <span className="font-tektur text-white text-2xl lg:text-3xl xl:text-4xl font-medium min-w-fit">
-                  ACESSOS:
-                </span>
-                <span className="font-tektur text-white/80 text-2xl lg:text-3xl xl:text-4xl">
-                  {userData.accessCount}
-                </span>
-              </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      CURSO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {professorData.course}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      CONTATO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {professorData.contact}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-2xl lg:text-3xl xl:text-4xl font-medium min-w-fit">
+                      ACESSOS:
+                    </span>
+                    <span className="font-tektur text-white/80 text-2xl lg:text-3xl xl:text-4xl">
+                      {professorData.accessCount}
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* Student-specific fields */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      MATRÍCULA:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {studentData.registration}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      CURSO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {studentData.course}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      MONITOR:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {studentData.isMonitor ? "SIM" : "NÃO"}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      PERIODO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {studentData.period}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      CONTATO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {studentData.contact}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-2xl lg:text-3xl xl:text-4xl font-medium min-w-fit">
+                      ACESSOS:
+                    </span>
+                    <span className="font-tektur text-white/80 text-2xl lg:text-3xl xl:text-4xl">
+                      {studentData.accessCount}
+                    </span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
