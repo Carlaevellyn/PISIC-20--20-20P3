@@ -43,6 +43,7 @@ const App = () => (
           <Route path="/presenca-qr" element={<PresencaQRLoading />} />
           <Route path="/monic" element={<AccessDenied />} />
           <Route path="/market-ic" element={<MarketICLoading />} />
+          <Route path="/notific" element={<NotificLoading />} />
           <Route path="/icronograma" element={<SystemModule />} />
           <Route path="/contacts" element={<Contacts />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
