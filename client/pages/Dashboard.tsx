@@ -12,6 +12,7 @@ export default function Dashboard() {
     { name: "PresençaQR", id: "presenca-qr" },
     { name: "Monic", id: "monic" },
     { name: "MarketIC", id: "market-ic" },
+    { name: "Notific", id: "notific" },
     { name: "ICronograma", id: "icronograma" },
   ];
 
