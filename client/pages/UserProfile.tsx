@@ -120,7 +120,7 @@ export default function UserProfile() {
                   NOME COMPLETO:
                 </span>
                 <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
-                  {isProfessor ? professorData.fullName : studentData.fullName}
+                  {isProfessor ? professorData.fullName : isAdministrative ? administrativeData.fullName : studentData.fullName}
                 </span>
               </div>
 
