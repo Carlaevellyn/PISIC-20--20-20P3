@@ -18,6 +18,7 @@ import RecallLoading from "./pages/RecallLoading";
 import KeyManagerLoading from "./pages/KeyManagerLoading";
 import MarketICLoading from "./pages/MarketICLoading";
 import PresencaQRLoading from "./pages/PresencaQRLoading";
+import NotificLoading from "./pages/NotificLoading";
 import AccessDenied from "./pages/AccessDenied";
 import NotFound from "./pages/NotFound";
 
