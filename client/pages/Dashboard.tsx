@@ -96,14 +96,7 @@ export default function Dashboard() {
           </div>
 
           {/* Footer */}
-          <div className="flex flex-col sm:flex-row items-center justify-between pt-8 lg:pt-12 border-t border-white/10">
-            {/* Notification */}
-            <div className="mb-4 sm:mb-0">
-              <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl">
-                [2] Notific
-              </span>
-            </div>
-
+          <div className="flex flex-col sm:flex-row items-center justify-center pt-8 lg:pt-12 border-t border-white/10">
             {/* Copyright and Contacts */}
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
               <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl">
