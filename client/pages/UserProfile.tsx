@@ -40,7 +40,17 @@ export default function UserProfile() {
     accessCount: "128",
   };
 
+  // Mock administrative data
+  const administrativeData = {
+    fullName: "Ana Carolina Oliveira",
+    position: "Coordenadora Acadêmica",
+    department: "Instituto de Computação - UFAL",
+    contact: "ana.oliveira@ic.ufal.br",
+    accessCount: "95",
+  };
+
   const isProfessor = userType === "Professor";
+  const isAdministrative = userType === "Administrador" || userType === "Coordenador";
 
   return (
     <div className="min-h-screen bg-pisic-bg p-4 lg:p-6 relative overflow-hidden">
