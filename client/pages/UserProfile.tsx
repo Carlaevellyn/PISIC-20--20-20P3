@@ -100,7 +100,7 @@ export default function UserProfile() {
 
             {/* User Type */}
             <h2 className="font-tektur text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-center">
-              {isProfessor ? "usuário profissional" : "usuário aluno"}
+              {isProfessor ? "usuário profissional" : isAdministrative ? "usuário administrativo" : "usuário aluno"}
             </h2>
 
             {/* Photo Placeholder */}
