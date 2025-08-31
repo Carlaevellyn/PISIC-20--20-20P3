@@ -199,6 +199,45 @@ export default function UserProfile() {
                     </span>
                   </div>
                 </>
+              ) : isAdministrative ? (
+                <>
+                  {/* Administrative-specific fields */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      CARGO/FUNÇÃO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {administrativeData.position}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      SETOR/DEPARTAMENTO DE ATUAÇÃO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {administrativeData.department}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-lg lg:text-xl xl:text-2xl font-medium min-w-fit">
+                      CONTATO:
+                    </span>
+                    <span className="font-tektur text-white/80 text-lg lg:text-xl xl:text-2xl">
+                      {administrativeData.contact}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <span className="font-tektur text-white text-2xl lg:text-3xl xl:text-4xl font-medium min-w-fit">
+                      ACESSOS:
+                    </span>
+                    <span className="font-tektur text-white/80 text-2xl lg:text-3xl xl:text-4xl">
+                      {administrativeData.accessCount}
+                    </span>
+                  </div>
+                </>
               ) : (
                 <>
                   {/* Student-specific fields */}
