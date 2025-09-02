@@ -62,7 +62,7 @@ export default function AdminRegister() {
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
             
             {/* Title */}
-            <h2 className="font-tektur text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-6 sm:mb-8">
+            <h2 className="font-tektur text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-6 sm:mb-8 leading-tight px-4">
               Registro de Administrador/Coordenador
             </h2>
 
