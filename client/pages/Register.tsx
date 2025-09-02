@@ -66,8 +66,15 @@ export default function Register() {
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
             {/* Main heading */}
             <h1 className="font-tektur text-pisic-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-8 sm:mb-12 md:mb-16">
-              crie uma conta
+              {isCredentialsStep ? "finalize sua conta" : "crie uma conta"}
             </h1>
+
+            {/* Professor credentials subtitle */}
+            {isCredentialsStep && (
+              <p className="font-tektur text-white text-lg sm:text-xl md:text-2xl text-center mb-8 sm:mb-12 leading-relaxed">
+                Agora digite seu email e senha para finalizar o cadastro profissional
+              </p>
+            )}
 
             {/* Registration form */}
             <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
