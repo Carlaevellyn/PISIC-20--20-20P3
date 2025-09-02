@@ -10,14 +10,14 @@ export default function Register() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  // Check if this is the credentials step for professor registration
+  // Check if this is the credentials step for multi-step registration
   const isCredentialsStep = searchParams.get("step") === "credentials";
 
   useEffect(() => {
     if (isCredentialsStep) {
-      // Load stored user type for professors
+      // Load stored user type for multi-step registration
       const storedUserType = localStorage.getItem("userType");
-      if (storedUserType === "Professor") {
+      if (storedUserType) {
         setUserType(storedUserType);
       }
     }
@@ -29,17 +29,22 @@ export default function Register() {
     e.preventDefault();
 
     if (isCredentialsStep) {
-      // This is the final step for professor registration
+      // This is the final step for multi-step registration
+      const storedUserType = localStorage.getItem("userType");
       const professionalData = localStorage.getItem("professionalData");
-      console.log("Final professor registration:", {
+      const administrativeData = localStorage.getItem("administrativeData");
+
+      console.log("Final multi-step registration:", {
         email,
         password,
-        userType: "Professor",
-        professionalData: professionalData ? JSON.parse(professionalData) : null
+        userType: storedUserType,
+        professionalData: professionalData ? JSON.parse(professionalData) : null,
+        administrativeData: administrativeData ? JSON.parse(administrativeData) : null
       });
 
       // Clean up temporary storage
       localStorage.removeItem("professionalData");
+      localStorage.removeItem("administrativeData");
 
       // Navigate to success page after registration
       navigate("/register-success");
@@ -69,10 +74,10 @@ export default function Register() {
               {isCredentialsStep ? "finalize sua conta" : "crie uma conta"}
             </h1>
 
-            {/* Professor credentials subtitle */}
+            {/* Multi-step credentials subtitle */}
             {isCredentialsStep && (
               <p className="font-tektur text-white text-lg sm:text-xl md:text-2xl text-center mb-8 sm:mb-12 leading-relaxed">
-                Agora digite seu email e senha para finalizar o cadastro profissional
+                Agora digite seu email e senha para finalizar o cadastro
               </p>
             )}
 
@@ -105,14 +110,18 @@ export default function Register() {
                             key={type}
                             type="button"
                             onClick={() => {
-                              if (type === "Professor") {
-                                // Redirect to professional registration page
-                                navigate("/professional-register");
-                              } else {
-                                setUserType(type);
-                                setIsDropdownOpen(false);
-                              }
-                            }}
+                            if (type === "Professor") {
+                              // Redirect to professional registration page
+                              navigate("/professional-register");
+                            } else if (type === "Administrador" || type === "Coordenador") {
+                              // Store temp user type and redirect to admin registration page
+                              localStorage.setItem("tempUserType", type);
+                              navigate("/admin-register");
+                            } else {
+                              setUserType(type);
+                              setIsDropdownOpen(false);
+                            }
+                          }}
                             className="w-full px-6 py-3 text-left font-tektur text-pisic-card hover:bg-white/20 first:rounded-t-2xl last:rounded-b-2xl transition-colors"
                           >
                             {type}
