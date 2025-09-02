@@ -7,7 +7,21 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+
+  // Check if this is the credentials step for professor registration
+  const isCredentialsStep = searchParams.get("step") === "credentials";
+
+  useEffect(() => {
+    if (isCredentialsStep) {
+      // Load stored user type for professors
+      const storedUserType = localStorage.getItem("userType");
+      if (storedUserType === "Professor") {
+        setUserType(storedUserType);
+      }
+    }
+  }, [isCredentialsStep]);
 
   const userTypes = ["Administrador", "Professor", "Aluno", "Coordenador"];
 
