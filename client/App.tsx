@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Register from "./pages/Register";
 import ProfessionalRegister from "./pages/ProfessionalRegister";
+import AdminRegister from "./pages/AdminRegister";
 import RegisterSuccess from "./pages/RegisterSuccess";
 import PasswordResetConfirmation from "./pages/PasswordResetConfirmation";
 import Login from "./pages/Login";
