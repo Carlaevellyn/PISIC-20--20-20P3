@@ -34,17 +34,17 @@ export default function Dashboard() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-6 sm:p-8 md:p-12 lg:p-16 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset] min-h-[calc(100vh-2rem)]">
           {/* Header */}
-          <div className="flex items-center justify-between mb-8 lg:mb-12">
-            {/* PISIC Logo */}
-            <div>
+          <div className="flex items-center justify-center relative mb-8 lg:mb-12">
+            {/* PISIC Logo - Centered */}
+            <div className="absolute left-1/2 transform -translate-x-1/2">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-pisic-text">
                 <span className="font-philosopher">PIS</span>
                 <span className="font-rubik-puddles">IC</span>
               </h1>
             </div>
 
-            {/* User Menu */}
-            <div className="flex items-center bg-slate-800/55 rounded-full px-4 py-2 lg:px-6 lg:py-3">
+            {/* User Menu - Right side */}
+            <div className="absolute right-0 flex items-center bg-slate-800/55 rounded-full px-4 py-2 lg:px-6 lg:py-3">
               <User className="w-6 h-6 lg:w-8 lg:h-8 text-pisic-text mr-3" />
               <Link
                 to="/profile"
@@ -86,7 +86,7 @@ export default function Dashboard() {
               <button
                 key={module.id}
                 onClick={() => handleModuleClick(module.id)}
-                className="bg-slate-800/47 hover:bg-slate-800/60 rounded-[47px] p-8 lg:p-12 transition-colors duration-200 group min-h-[200px] lg:min-h-[234px] flex items-center justify-center"
+                className="bg-slate-800/70 hover:bg-slate-800/85 border border-slate-600/30 hover:border-slate-500/50 rounded-[47px] p-8 lg:p-12 transition-all duration-200 group min-h-[200px] lg:min-h-[234px] flex items-center justify-center shadow-lg hover:shadow-xl"
               >
                 <span className="font-tektur text-white text-2xl lg:text-3xl xl:text-4xl group-hover:scale-105 transition-transform duration-200">
                   {module.name}
