@@ -140,10 +140,12 @@ export default function Register() {
                   />
                   <Mail className="absolute right-0 bottom-3 w-5 h-5 sm:w-6 sm:h-6 text-pisic-text" />
                 </div>
-                {/* Institutional email information */}
-                <p className="font-tektur text-white text-sm sm:text-base mt-3 text-center leading-relaxed">
-                  Somente e-mails institucionais serão aceitos. Um link de ativação será enviado.
-                </p>
+                {/* Institutional email information - only show in initial step */}
+                {!isCredentialsStep && (
+                  <p className="font-tektur text-white text-sm sm:text-base mt-3 text-center leading-relaxed">
+                    Somente e-mails institucionais serão aceitos. Um link de ativação será enviado.
+                  </p>
+                )}
               </div>
 
               {/* Password input */}
