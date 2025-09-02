@@ -64,15 +64,4 @@ const App = () => (
   </QueryClientProvider>
 );
 
-const container = document.getElementById("root")!;
-
-// Store root in a global variable to prevent duplicate createRoot calls
-declare global {
-  var __reactRoot: any;
-}
-
-if (!globalThis.__reactRoot) {
-  globalThis.__reactRoot = createRoot(container);
-}
-
-globalThis.__reactRoot.render(<App />);
+export default App;
