@@ -78,49 +78,51 @@ export default function Register() {
 
             {/* Registration form */}
             <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
-              {/* User type dropdown */}
-              <div className="relative">
-                <label className="block font-tektur text-white text-lg sm:text-xl md:text-2xl mb-2">
-                  SELECIONE O TIPO DE USUARIO
-                </label>
+              {/* User type dropdown - only show in initial step */}
+              {!isCredentialsStep && (
                 <div className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="w-full bg-white/25 rounded-full px-6 py-3 text-white font-tektur text-lg flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-white/50"
-                  >
-                    <span className={userType || "text-white/70"}>
-                      {userType || "Selecione..."}
-                    </span>
-                    <ChevronDown
-                      className={`w-6 h-6 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
-                    />
-                  </button>
+                  <label className="block font-tektur text-white text-lg sm:text-xl md:text-2xl mb-2">
+                    SELECIONE O TIPO DE USUARIO
+                  </label>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className="w-full bg-white/25 rounded-full px-6 py-3 text-white font-tektur text-lg flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-white/50"
+                    >
+                      <span className={userType || "text-white/70"}>
+                        {userType || "Selecione..."}
+                      </span>
+                      <ChevronDown
+                        className={`w-6 h-6 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
 
-                  {isDropdownOpen && (
-                    <div className="absolute top-full left-0 right-0 mt-2 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg z-20">
-                      {userTypes.map((type) => (
-                        <button
-                          key={type}
-                          type="button"
-                          onClick={() => {
-                            if (type === "Professor") {
-                              // Redirect to professional registration page
-                              navigate("/professional-register");
-                            } else {
-                              setUserType(type);
-                              setIsDropdownOpen(false);
-                            }
-                          }}
-                          className="w-full px-6 py-3 text-left font-tektur text-pisic-card hover:bg-white/20 first:rounded-t-2xl last:rounded-b-2xl transition-colors"
-                        >
-                          {type}
-                        </button>
-                      ))}
-                    </div>
-                  )}
+                    {isDropdownOpen && (
+                      <div className="absolute top-full left-0 right-0 mt-2 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg z-20">
+                        {userTypes.map((type) => (
+                          <button
+                            key={type}
+                            type="button"
+                            onClick={() => {
+                              if (type === "Professor") {
+                                // Redirect to professional registration page
+                                navigate("/professional-register");
+                              } else {
+                                setUserType(type);
+                                setIsDropdownOpen(false);
+                              }
+                            }}
+                            className="w-full px-6 py-3 text-left font-tektur text-pisic-card hover:bg-white/20 first:rounded-t-2xl last:rounded-b-2xl transition-colors"
+                          >
+                            {type}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Email input */}
               <div className="relative">
