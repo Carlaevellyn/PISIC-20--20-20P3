@@ -38,8 +38,12 @@ export default function Register() {
         email,
         password,
         userType: storedUserType,
-        professionalData: professionalData ? JSON.parse(professionalData) : null,
-        administrativeData: administrativeData ? JSON.parse(administrativeData) : null
+        professionalData: professionalData
+          ? JSON.parse(professionalData)
+          : null,
+        administrativeData: administrativeData
+          ? JSON.parse(administrativeData)
+          : null,
       });
 
       // Clean up temporary storage
@@ -110,18 +114,21 @@ export default function Register() {
                             key={type}
                             type="button"
                             onClick={() => {
-                            if (type === "Professor") {
-                              // Redirect to professional registration page
-                              navigate("/professional-register");
-                            } else if (type === "Administrador" || type === "Coordenador") {
-                              // Store temp user type and redirect to admin registration page
-                              localStorage.setItem("tempUserType", type);
-                              navigate("/admin-register");
-                            } else {
-                              setUserType(type);
-                              setIsDropdownOpen(false);
-                            }
-                          }}
+                              if (type === "Professor") {
+                                // Redirect to professional registration page
+                                navigate("/professional-register");
+                              } else if (
+                                type === "Administrador" ||
+                                type === "Coordenador"
+                              ) {
+                                // Store temp user type and redirect to admin registration page
+                                localStorage.setItem("tempUserType", type);
+                                navigate("/admin-register");
+                              } else {
+                                setUserType(type);
+                                setIsDropdownOpen(false);
+                              }
+                            }}
                             className="w-full px-6 py-3 text-left font-tektur text-pisic-card hover:bg-white/20 first:rounded-t-2xl last:rounded-b-2xl transition-colors"
                           >
                             {type}
@@ -152,7 +159,8 @@ export default function Register() {
                 {/* Institutional email information - only show in initial step */}
                 {!isCredentialsStep && (
                   <p className="font-tektur text-white text-sm sm:text-base mt-3 text-center leading-relaxed">
-                    Somente e-mails institucionais serão aceitos. Um link de ativação será enviado.
+                    Somente e-mails institucionais serão aceitos. Um link de
+                    ativação será enviado.
                   </p>
                 )}
               </div>

@@ -16,17 +16,17 @@ export default function AdminRegister() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      document: file
+      document: file,
     }));
   };
 
@@ -35,7 +35,8 @@ export default function AdminRegister() {
     console.log("Administrative registration data:", formData);
 
     // Store user type as Administrador (will be overridden if Coordenador was selected)
-    const storedUserType = localStorage.getItem("tempUserType") || "Administrador";
+    const storedUserType =
+      localStorage.getItem("tempUserType") || "Administrador";
     localStorage.setItem("userType", storedUserType);
     localStorage.setItem("administrativeData", JSON.stringify(formData));
 
@@ -60,7 +61,6 @@ export default function AdminRegister() {
         {/* Glass morphism card */}
         <div className="relative mx-auto max-w-3xl">
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
-            
             {/* Title */}
             <h2 className="font-tektur text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mb-6 sm:mb-8 leading-tight px-4">
               Registro de Administrador/Coordenador
@@ -68,7 +68,8 @@ export default function AdminRegister() {
 
             {/* Subtitle */}
             <p className="font-tektur text-white text-lg sm:text-xl md:text-2xl text-center mb-8 sm:mb-12 leading-relaxed">
-              Preencha as informações abaixo para criar sua conta e ter acesso ao PISIC
+              Preencha as informações abaixo para criar sua conta e ter acesso
+              ao PISIC
             </p>
 
             {/* Registration form */}
@@ -172,8 +173,12 @@ export default function AdminRegister() {
                     className="w-4 h-4 sm:w-5 sm:h-5 mt-1 bg-white border-2 border-white rounded focus:ring-2 focus:ring-white/50"
                     required
                   />
-                  <label htmlFor="confirmAdminRole" className="font-tektur text-white text-base sm:text-lg md:text-xl leading-relaxed">
-                    Confirmo que exerço função administrativa/coordenação na UFAL.
+                  <label
+                    htmlFor="confirmAdminRole"
+                    className="font-tektur text-white text-base sm:text-lg md:text-xl leading-relaxed"
+                  >
+                    Confirmo que exerço função administrativa/coordenação na
+                    UFAL.
                   </label>
                 </div>
 
@@ -188,7 +193,10 @@ export default function AdminRegister() {
                     className="w-4 h-4 sm:w-5 sm:h-5 mt-1 bg-white border-2 border-white rounded focus:ring-2 focus:ring-white/50"
                     required
                   />
-                  <label htmlFor="acceptTerms" className="font-tektur text-white text-base sm:text-lg md:text-xl leading-relaxed">
+                  <label
+                    htmlFor="acceptTerms"
+                    className="font-tektur text-white text-base sm:text-lg md:text-xl leading-relaxed"
+                  >
                     Li e aceito os Termos de Uso e a Política de Privacidade.
                   </label>
                 </div>

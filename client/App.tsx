@@ -38,11 +38,17 @@ const App = () => (
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/professional-register" element={<ProfessionalRegister />} />
+          <Route
+            path="/professional-register"
+            element={<ProfessionalRegister />}
+          />
           <Route path="/admin-register" element={<AdminRegister />} />
           <Route path="/register-success" element={<RegisterSuccess />} />
           <Route path="/forgot-password" element={<Index />} />
-          <Route path="/password-reset-confirmation" element={<PasswordResetConfirmation />} />
+          <Route
+            path="/password-reset-confirmation"
+            element={<PasswordResetConfirmation />}
+          />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/recall" element={<RecallLoading />} />

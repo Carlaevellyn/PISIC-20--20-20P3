@@ -20,7 +20,6 @@ export default function PasswordResetConfirmation() {
         <div className="relative mx-auto max-w-4xl">
           {/* Glass card with backdrop blur */}
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
-            
             {/* Success Icon */}
             <div className="flex justify-center mb-8 lg:mb-12">
               <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 bg-green-500/20 rounded-full flex items-center justify-center backdrop-blur-sm">

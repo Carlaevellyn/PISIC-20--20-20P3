@@ -14,9 +14,9 @@ export default function ProfessionalRegister() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -49,7 +49,6 @@ export default function ProfessionalRegister() {
         {/* Glass morphism card */}
         <div className="relative mx-auto max-w-3xl">
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
-            
             {/* Title */}
             <h2 className="font-tektur text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-6 sm:mb-8">
               Registro Profissional
@@ -57,7 +56,8 @@ export default function ProfessionalRegister() {
 
             {/* Subtitle */}
             <p className="font-tektur text-white text-lg sm:text-xl md:text-2xl text-center mb-8 sm:mb-12 leading-relaxed">
-              Preencha as informações abaixo para criar sua conta e ter acesso ao PISIC
+              Preencha as informações abaixo para criar sua conta e ter acesso
+              ao PISIC
             </p>
 
             {/* Registration form */}
@@ -145,7 +145,10 @@ export default function ProfessionalRegister() {
                     className="w-4 h-4 sm:w-5 sm:h-5 mt-1 bg-white border-2 border-white rounded focus:ring-2 focus:ring-white/50"
                     required
                   />
-                  <label htmlFor="confirmProfessor" className="font-tektur text-white text-base sm:text-lg md:text-xl leading-relaxed">
+                  <label
+                    htmlFor="confirmProfessor"
+                    className="font-tektur text-white text-base sm:text-lg md:text-xl leading-relaxed"
+                  >
                     Confirmo que sou professor vinculado à UFAL
                   </label>
                 </div>
@@ -161,7 +164,10 @@ export default function ProfessionalRegister() {
                     className="w-4 h-4 sm:w-5 sm:h-5 mt-1 bg-white border-2 border-white rounded focus:ring-2 focus:ring-white/50"
                     required
                   />
-                  <label htmlFor="acceptTerms" className="font-tektur text-white text-base sm:text-lg md:text-xl leading-relaxed">
+                  <label
+                    htmlFor="acceptTerms"
+                    className="font-tektur text-white text-base sm:text-lg md:text-xl leading-relaxed"
+                  >
                     Li e aceito os Termos de Uso e a Política de Privacidade.
                   </label>
                 </div>
