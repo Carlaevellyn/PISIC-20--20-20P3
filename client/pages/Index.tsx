@@ -4,11 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Index() {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
     console.log("Email submitted:", email);
+    // Navigate to confirmation page
+    navigate("/password-reset-confirmation");
   };
 
   return (
