@@ -27,13 +27,32 @@ export default function Register() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Registration data:", { email, password, userType });
 
-    // Store user type for profile personalization
-    localStorage.setItem("userType", userType);
+    if (isCredentialsStep) {
+      // This is the final step for professor registration
+      const professionalData = localStorage.getItem("professionalData");
+      console.log("Final professor registration:", {
+        email,
+        password,
+        userType: "Professor",
+        professionalData: professionalData ? JSON.parse(professionalData) : null
+      });
 
-    // Navigate to success page after registration
-    navigate("/register-success");
+      // Clean up temporary storage
+      localStorage.removeItem("professionalData");
+
+      // Navigate to success page after registration
+      navigate("/register-success");
+    } else {
+      // Regular registration flow for non-professors
+      console.log("Registration data:", { email, password, userType });
+
+      // Store user type for profile personalization
+      localStorage.setItem("userType", userType);
+
+      // Navigate to success page after registration
+      navigate("/register-success");
+    }
   };
 
   return (
