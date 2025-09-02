@@ -64,8 +64,13 @@ export default function Register() {
                           key={type}
                           type="button"
                           onClick={() => {
-                            setUserType(type);
-                            setIsDropdownOpen(false);
+                            if (type === "Professor") {
+                              // Redirect to professional registration page
+                              navigate("/professional-register");
+                            } else {
+                              setUserType(type);
+                              setIsDropdownOpen(false);
+                            }
                           }}
                           className="w-full px-6 py-3 text-left font-tektur text-pisic-card hover:bg-white/20 first:rounded-t-2xl last:rounded-b-2xl transition-colors"
                         >
