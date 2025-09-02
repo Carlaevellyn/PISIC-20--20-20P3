@@ -170,7 +170,7 @@ export default function Register() {
                   type="submit"
                   className="bg-gray-300 hover:bg-gray-200 text-pisic-card font-tektur text-2xl sm:text-3xl md:text-4xl px-8 sm:px-12 md:px-16 py-3 sm:py-4 rounded-full transition-colors duration-200 font-normal min-w-[200px] sm:min-w-[250px]"
                 >
-                  CRIAR
+                  {isCredentialsStep ? "FINALIZAR" : "CRIAR"}
                 </button>
               </div>
 
