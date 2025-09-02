@@ -23,12 +23,13 @@ export default function ProfessionalRegister() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Professional registration data:", formData);
-    
-    // Store user type as Professor
+
+    // Store user type and professional data
     localStorage.setItem("userType", "Professor");
-    
-    // Navigate to success page after registration
-    navigate("/register-success");
+    localStorage.setItem("professionalData", JSON.stringify(formData));
+
+    // Navigate back to main registration to enter email and password
+    navigate("/register?step=credentials");
   };
 
   return (
