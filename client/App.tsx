@@ -22,6 +22,7 @@ import NotificLoading from "./pages/NotificLoading";
 import ICronogramaLoading from "./pages/ICronogramaLoading";
 import AccessDenied from "./pages/AccessDenied";
 import NotFound from "./pages/NotFound";
+import SystemNotFound from "./pages/SystemNotFound";
 
 const queryClient = new QueryClient();
 
