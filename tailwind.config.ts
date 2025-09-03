@@ -22,7 +22,7 @@ export default {
         pisic: {
           bg: "#384D5D",
           card: "#29475E",
-          text: "#AFAFAF",
+          text: "#EDEDED",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
