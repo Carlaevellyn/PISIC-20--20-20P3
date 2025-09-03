@@ -57,6 +57,7 @@ const App = () => (
           <Route path="/notific" element={<NotificLoading />} />
           <Route path="/icronograma" element={<ICronogramaLoading />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/system-not-found" element={<SystemNotFound />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
