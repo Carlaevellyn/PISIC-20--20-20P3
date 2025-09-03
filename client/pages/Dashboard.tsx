@@ -6,6 +6,27 @@ export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
+  const normalize = (s: string) =>
+    s
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+
+  const filteredModules = searchQuery
+    ? systemModules.filter((m) => normalize(m.name).includes(normalize(searchQuery)))
+    : [];
+
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (filteredModules.length > 0) {
+        handleModuleClick(filteredModules[0].id);
+      } else {
+        navigate("/system-not-found");
+      }
+    }
+  };
+
   const systemModules = [
     { name: "Recall", id: "recall" },
     { name: "Key Manager", id: "key-manager" },
@@ -73,9 +94,36 @@ export default function Dashboard() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={handleSearchKeyDown}
                   placeholder="buscar sistema..."
                   className="w-full bg-transparent pl-12 lg:pl-16 text-pisic-text font-tektur text-xl lg:text-2xl xl:text-3xl placeholder-pisic-text outline-none"
                 />
+
+                {searchQuery && (
+                  <div className="absolute left-0 right-0 mt-3 bg-slate-800/70 backdrop-blur-md border border-white/20 rounded-3xl shadow-xl overflow-hidden">
+                    {filteredModules.length > 0 ? (
+                      <ul>
+                        {filteredModules.map((m) => (
+                          <li key={m.id}>
+                            <button
+                              onClick={() => handleModuleClick(m.id)}
+                              className="w-full text-left px-6 py-4 font-tektur text-white text-xl hover:bg-white/10 transition-colors"
+                            >
+                              {m.name}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <button
+                        onClick={() => navigate("/system-not-found")}
+                        className="w-full text-left px-6 py-4 font-tektur text-white text-xl hover:bg-white/10 transition-colors"
+                      >
+                        sistema não encontrado ou incorreto
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
