@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 export default function ProfessionalRegister() {
   const [formData, setFormData] = useState({
@@ -49,6 +50,14 @@ export default function ProfessionalRegister() {
         {/* Glass morphism card */}
         <div className="relative mx-auto max-w-3xl">
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
+            <button
+              type="button"
+              onClick={() => navigate(-1)}
+              className="absolute top-4 left-4 p-2 rounded-full bg-slate-800/50 hover:bg-slate-800/70 text-white"
+              aria-label="Voltar"
+            >
+              <ArrowLeft className="w-6 h-6" />
+            </button>
             {/* Title */}
             <h2 className="font-tektur text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-6 sm:mb-8">
               Registro Profissional
