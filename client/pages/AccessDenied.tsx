@@ -1,7 +1,5 @@
-import { Home, User, Search, AlertTriangle } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
-import { User, Home, AlertTriangle } from "lucide-react";
+import { Home, User, AlertTriangle } from "lucide-react";
 import SearchSystems from "@/components/SearchSystems";
 
 export default function AccessDenied() {
