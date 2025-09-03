@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Mail, Lock, ChevronDown } from "lucide-react";
+import { Mail, Lock, ChevronDown, ArrowLeft } from "lucide-react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 export default function Register() {
@@ -73,6 +73,14 @@ export default function Register() {
         {/* Glass morphism card */}
         <div className="relative z-10 w-full max-w-2xl">
           <div className="relative bg-white/10 backdrop-blur-[59px] rounded-[151px] p-8 sm:p-12 md:p-16 lg:p-20 shadow-[59px_-59px_59px_0_rgba(165,165,165,0.1)_inset,_-59px_59px_59px_0_rgba(255,255,255,0.1)_inset]">
+            <button
+              type="button"
+              onClick={() => navigate(-1)}
+              className="absolute top-4 left-4 p-2 rounded-full bg-slate-800/50 hover:bg-slate-800/70 text-white"
+              aria-label="Voltar"
+            >
+              <ArrowLeft className="w-6 h-6" />
+            </button>
             {/* Main heading */}
             <h1 className="font-tektur text-pisic-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center mb-8 sm:mb-12 md:mb-16">
               {isCredentialsStep ? "finalize sua conta" : "crie uma conta"}
