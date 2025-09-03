@@ -6,6 +6,21 @@ export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
+
+  const systemModules = [
+    { name: "Recall", id: "recall" },
+    { name: "Key Manager", id: "key-manager" },
+    { name: "PresençaQR", id: "presenca-qr" },
+    { name: "Monic", id: "monic" },
+    { name: "MarketIC", id: "market-ic" },
+    { name: "Notific", id: "notific" },
+    { name: "ICronograma", id: "icronograma" },
+  ];
+
+  const handleModuleClick = (moduleId: string) => {
+    navigate(`/${moduleId}`);
+  };
+
   const normalize = (s: string) =>
     s
       .normalize("NFD")
@@ -25,20 +40,6 @@ export default function Dashboard() {
         navigate("/system-not-found");
       }
     }
-  };
-
-  const systemModules = [
-    { name: "Recall", id: "recall" },
-    { name: "Key Manager", id: "key-manager" },
-    { name: "PresençaQR", id: "presenca-qr" },
-    { name: "Monic", id: "monic" },
-    { name: "MarketIC", id: "market-ic" },
-    { name: "Notific", id: "notific" },
-    { name: "ICronograma", id: "icronograma" },
-  ];
-
-  const handleModuleClick = (moduleId: string) => {
-    navigate(`/${moduleId}`);
   };
 
   const handleLogout = () => {
