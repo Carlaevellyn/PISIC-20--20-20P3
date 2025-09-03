@@ -67,7 +67,7 @@ export default function Dashboard() {
           {/* Search Bar */}
           <div className="flex items-center justify-center mb-8 lg:mb-12">
             <div className="relative w-full max-w-2xl">
-              <div className="relative bg-slate-800/37 rounded-full px-6 py-4 lg:px-8 lg:py-5">
+              <div className="relative bg-transparent rounded-full px-6 py-4 lg:px-8 lg:py-5 border border-white/30 backdrop-blur-sm shadow-[0_0_0_1px_rgba(255,255,255,0.08)_inset] focus-within:border-white/50">
                 <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 w-6 h-6 lg:w-8 lg:h-8 text-pisic-text" />
                 <input
                   type="text"
