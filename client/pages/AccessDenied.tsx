@@ -1,11 +1,12 @@
 import { Home, User, Search, AlertTriangle } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { User, Home, AlertTriangle } from "lucide-react";
+import SearchSystems from "@/components/SearchSystems";
 
 export default function AccessDenied() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [searchQuery, setSearchQuery] = useState("");
 
   // Extract module name from pathname
   const moduleName = location.pathname.replace("/", "").replace("-", " ");
@@ -66,18 +67,7 @@ export default function AccessDenied() {
 
           {/* Search Bar */}
           <div className="flex items-center mb-8 lg:mb-12">
-            <div className="relative w-full max-w-2xl">
-              <div className="relative bg-slate-800/37 rounded-full px-6 py-4 lg:px-8 lg:py-5">
-                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 w-6 h-6 lg:w-8 lg:h-8 text-pisic-text" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="buscar sistema..."
-                  className="w-full bg-transparent pl-12 lg:pl-16 text-pisic-text font-tektur text-xl lg:text-2xl xl:text-3xl placeholder-pisic-text outline-none"
-                />
-              </div>
-            </div>
+            <SearchSystems />
           </div>
 
           {/* Module Title */}
